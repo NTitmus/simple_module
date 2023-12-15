@@ -10,6 +10,6 @@ terraform {
 }
 
 resource "aws_instance" "example" {
-    instance_type = "t2.micro"
-    ami = var.instance_ami
+  instance_type = "t2.micro"
+  ami           = var.instance_ami
 }

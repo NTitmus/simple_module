@@ -22,6 +22,6 @@ terraform {
 }
 
 module "module_instance" {
-  source = "./modules/module_instance"
+  source       = "./modules/module_instance"
   instance_ami = "ami-0cfd0973db26b893b"
 }
