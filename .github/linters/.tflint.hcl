@@ -20,7 +20,7 @@ plugin "aws" {
   enabled = true
   version = "0.28.0"
   source  = "github.com/terraform-linters/tflint-ruleset-aws"
-  #deep_check = true
+  deep_check = true
 }
 
 #rule "aws_instance_invalid_type" {

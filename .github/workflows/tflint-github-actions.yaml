@@ -19,7 +19,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
+      
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AK }}
+          aws-secret-access-key: ${{ secrets.SAK }}
+          aws-region: eu-west-2
+      
       - name: Super-linter
         uses: super-linter/super-linter/slim@v5
         env:
@@ -76,7 +83,7 @@ jobs:
           VALIDATE_TSX: false
           VALIDATE_TYPESCRIPT_ES: false
           VALIDATE_TYPESCRIPT_STANDARD: false
-          
+
 
 
 
