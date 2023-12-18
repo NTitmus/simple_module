@@ -12,4 +12,11 @@ terraform {
 resource "aws_instance" "example" {
   instance_type = "t2.micro"
   ami           = var.instance_ami
+
+  metadata_options = {
+    http_endpoint               = "enabled"
+    http_tokens                 = "required"
+    http_put_response_hop_limit = 8
+  }
+
 }
