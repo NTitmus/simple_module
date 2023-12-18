@@ -21,7 +21,25 @@ terraform {
   }
 }
 
+resource "aws_vpc" "new_vpc" {
+ cidr_block = "10.0.0.0/16"
+ 
+ tags = {
+   Name = "Project VPC"
+ }
+}
+
+resource "aws_subnet" "private_subnet" {
+ vpc_id     = aws_vpc.new_vpc.id
+ cidr_block = "10.0.4.0/24"
+ 
+ tags = {
+   Name = "Private Subnet Project VPC"
+ }
+}
+
 module "module_instance" {
   source       = "./modules/module_instance"
   instance_ami = "ami-0cfd0973db26b893b"
+  subnet_id = aws_subnet.private_subnet.id
 }
