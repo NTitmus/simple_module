@@ -5,5 +5,5 @@ variable "instance_ami" {
 
 variable "subnet_id" {
   description = "subnet id"
-  type = string
+  type        = string
 }
