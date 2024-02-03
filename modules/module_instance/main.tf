@@ -12,12 +12,11 @@ terraform {
 resource "aws_instance" "example" {
   instance_type = "t2.micro"
   ami           = var.instance_ami
-  subnet_idl     = var.subnet_id
+  subnet_id     = var.subnet_id
 
   metadata_options { 
     http_endpoint = "enabled"
-  http_tokens   = "required"
-
+    http_tokens   = "required"
   }
 
 }
