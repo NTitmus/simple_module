@@ -42,4 +42,5 @@ module "module_instance" {
   source       = "./modules/module_instance"
   instance_ami = "ami-0cfd0973db26b893b"
   subnet_id    = aws_subnet.private_subnet.id
+  
 }
