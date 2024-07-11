@@ -29,6 +29,8 @@ resource "aws_vpc" "new_vpc" {
   }
 }
 
+# added comment
+
 resource "aws_subnet" "private_subnet" {
   vpc_id     = aws_vpc.new_vpc.id
   cidr_block = "10.0.4.0/24"
