@@ -30,6 +30,7 @@ resource "aws_vpc" "new_vpc" {
 }
 
 # added comment
+# additional comment
 
 resource "aws_subnet" "private_subnet" {
   vpc_id     = aws_vpc.new_vpc.id
